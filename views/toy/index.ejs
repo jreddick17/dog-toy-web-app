@@ -1,0 +1,26 @@
+<%- include('../partials/header.ejs')%>
+<body class="toy-page">
+    <main>
+        <section class="toys-container">
+            <% if (toys.length) { %>
+             <% toys.forEach(toy => { %>
+             <a href="/toys/<%= toy.id %>" class="toy-card">
+                 <img src="<%= toy.image %>" alt="<%= toy.title %>">
+                <div class="toy-info">
+                 <h2><%= toy.title %></h2>
+                 <p>Condition: <%= toy.condition %></p>
+                 <p>Price: $<%= toy.price %></p>
+                 <p>Offers: <%= toy.offers %></p>
+                </div>
+             </a>
+              <% }); %>
+         <% } else { %>
+              <p>There are no toys up for sale right now!</p>
+         <% } %>
+         </section>
+    </main>
+</body>
+
+    <%- include('../partials/footer.ejs')%>
+
+

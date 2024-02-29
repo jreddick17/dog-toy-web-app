@@ -1,0 +1,40 @@
+<%- include('../partials/header.ejs')%>
+<body class="toy-page">
+    <div class="toy-details">
+        <img src="<%= toy.image %>" alt="<%= toy.name %>">
+        <div class="toy-info">
+            <h2 class="toy-name"><%= toy.title %></h2>
+            <p><strong>Condition:</strong> <%= getConditionLabel(toy.condition) %></p>
+            <p><strong>Price:</strong> <%= toy.price %></p>
+            <p><strong>Offers:</strong> <%= toy.offers %></p>
+            <p><strong>Seller:</strong> <%= toy.seller %></p>
+            <p class="toy-description"><strong>Description: </strong><%= toy.description %></p>
+            <div class="buttons">
+                <form method="GET" action="/toys/<%= toy.id %>/edit">
+                    <button class="edit-button" type="submit">Edit</button>
+                </form>
+                <form method="POST" action="/toys/<%= toy.id %>?_method=DELETE">
+                    <button class="delete-button" type="submit">Delete</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+    <%- include('../partials/footer.ejs')%>
+
+    <% function getConditionLabel(condition) {
+        if (condition === 'new') {
+            return 'New';
+        } else if (condition === 'used') {
+            return 'Used';
+        } else if (condition === 'slightly-used') {
+            return 'Slightly Used';
+        } else if (condition === 'still-in-the-box') {
+            return 'Still in the Box';
+        } else if (condition === 'very-used') {
+            return 'Very Used';
+        } else {
+            return toy.condition;
+        }
+    } %>

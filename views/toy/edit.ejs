@@ -1,0 +1,55 @@
+<%- include('../partials/header.ejs')%>
+
+    <div class="sell-header">
+        <h1>Edit Toy Listing</h1>
+        <p>Update the details of your toy listing below:</p>
+    </div>
+
+    <div class="sell-container">
+        <form action="/toys/<%= toy.id%>?_method=PUT" method='POST' class="sell-form" enctype="multipart/form-data">
+            <!-- enctype="multipart/form-data" NOTE: u tried to make it work, ended up breaking everything-->
+            <div class="form-field">
+                <label for="seller">Seller:</label>
+                <input type="text" id="seller" name="seller" value="<%= toy.seller %>" required>
+            </div>
+            <div class="form-field">
+                <label for="condition">Condition:</label>
+                <select id="condition" name="condition" required>
+                    <option value="" disabled>Please Select One</option>
+                    <option value="new" <%=(toy.condition==='new' ) ? 'selected' : '' %>>New</option>
+                    <option value="used" <%=(toy.condition==='used' ) ? 'selected' : '' %>>Used</option>
+                    <option value="slightly-used" <%=(toy.condition==='slightly-used' ) ? 'selected' : '' %>>Slightly
+                        Used</option>
+                    <option value="still-in-the-box" <%=(toy.condition==='still-in-the-box' ) ? 'selected' : '' %>>Still
+                        in the Box</option>
+                    <option value="very-used" <%=(toy.condition==='very-used' ) ? 'selected' : '' %>>Very Used</option>
+                </select>
+            </div>
+
+            <div class="form-field">
+                <label for="title">Title:</label>
+                <input type="text" id="title" name="title" value="<%= toy.title %>" required>
+            </div>
+
+            <div class="form-field">
+                <label for="price">Price:</label>
+                <input type="number" id="price" name="price" value="<%= toy.price %>" required>
+            </div>
+
+            <div class="form-field">
+                <label for="description">Description:</label>
+                <textarea id="description" name="description" rows="5" required><%= toy.description %></textarea>
+            </div>
+
+            <div class="form-field">
+                <label for="image">Image:</label>
+                <input type="file" id="image" name="image" accept="image/*">
+            </div>
+
+            <input type="hidden" name="currentImage" value="<%= toy.image %>">
+
+            <button type="submit">Save Changes</button>
+        </form>
+    </div>
+
+    <%- include('../partials/footer.ejs')%>

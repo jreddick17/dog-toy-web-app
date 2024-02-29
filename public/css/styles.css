@@ -1,0 +1,320 @@
+/*nav bar */
+header {
+    background-color: #d36f28;
+    color: white;
+    padding: 1em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* .logo a {
+    text-decoration: none;
+    color: white;
+} */
+
+.logo {
+    max-height: 100px; 
+    overflow: hidden;
+}
+
+.logo img {
+    max-width: 100px;
+    height: auto;
+    object-fit: contain; 
+}
+
+.slogan {
+    text-align: center;
+    margin: 0 10px; 
+}
+
+.slogan p {
+    margin: 0;
+    font-size: 25px;
+    color: white;
+    font-family: cursive, sans-serif;
+}
+
+.navigation-links a {
+    text-decoration: none;
+    color: white;
+    margin: 0 1em;
+    transition: color 0.3s; /* add a smooth transition effect for color change */
+    font-family: cursive, sans-serif;
+    font-size: larger;
+}
+
+.navigation-links a:hover {
+    color: #793f16; 
+}
+
+.search-bar {
+    display: flex;
+    border-radius: 20px; 
+    overflow: hidden;
+    width: 300px;
+    height: 40px;
+}
+
+.search-bar input {
+    flex-grow: 1;
+    padding: 0.5em;
+    border: none;
+    border-radius: 20px; /* match the border-radius from .search-bar */
+    outline: none;
+}
+
+.search-bar button {
+    display: none;
+}
+
+body, h1, h2, h3, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+.home-body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: #e7c157;
+    color: #333;
+    margin: 0; 
+}
+
+
+/* footer */
+footer {
+    background-color: #d36f28;
+    color: white;
+    text-align: center;
+    padding: 1em;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.social-media i {
+    font-size: 24px;
+    color: white; 
+    margin-right: 70px;
+}
+
+/* home page */
+.content-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    height: calc(100vh - 140px); 
+}
+
+.quadrant {
+    position: relative;
+    overflow: hidden;
+}
+
+.quadrant h1 {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #333;
+    font-family: 'Comic Sans MS', cursive;
+    font-size: 40px;
+}
+
+.quadrant h2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #333;
+    font-family: 'Comic Sans MS', cursive;
+    font-size: 20px;
+}
+
+.quadrant p {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #333;
+    font-family: 'Comic Sans MS', cursive;
+    font-size: 20px;
+}
+
+.quadrant img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.quadrant.top-left {
+    background-color: #e7c157; 
+}
+
+
+/* toy page */
+.toy-page {
+    background-color: #e7c157; 
+}
+
+.toys-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 20px;
+    background-color: #e7c157; 
+}
+
+.toy-card {
+    text-decoration: none;
+    width: 250px;
+    margin: 10px;
+    overflow: hidden;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    background-color: #fff; /* white background for the content inside the cards */
+}
+
+.toy-card:hover {
+    transform: scale(1.05);
+}
+
+.toy-card img {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid #ddd;
+}
+
+
+/*item page*/
+.toy-info {
+    padding: 10px;
+}
+
+.toy-info h2 {
+    font-size: 1.2em;
+    margin-bottom: 5px;
+}
+
+.toy-info p {
+    margin: 5px 0;
+}
+
+.toy-details {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* center the content horizontally */
+    padding: 20px;
+}
+
+.toy-details img {
+    max-width: 300px; 
+    height: auto;
+    margin-right: 20px; /* add margin for space between image and text */
+}
+
+.toy-info {
+    max-width: 600px; 
+}
+
+.toy-name {
+    color: #793f16; 
+    font-size: 1.6em; /* increase font size for emphasis */
+}
+
+.toy-description {
+    font-size: 0.9em; /* slightly smaller text for description */
+    margin-top: 10px;
+}
+
+.buttons {
+    display: flex;
+    margin-top: 20px;
+}
+
+.edit-button, .delete-button {
+    background-color: #793f16; /* brown color for the buttons */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    margin-right: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.edit-button:hover, .delete-button:hover {
+    background-color: #5a2b11; 
+}
+
+
+/*sell page*/
+.sell-header {
+    text-align: center;
+    margin: 20px;
+    font-family: 'Comic Sans MS', cursive;
+}
+
+.sell-header h1 {
+    font-size: 40px;
+}
+
+.sell-header p {
+    font-size: 22px;
+}
+
+.sell-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 30px;
+    background-color: white; /* white background for the form container */
+    border-radius: 8px;
+    padding: 10px;
+    max-width: 18%; 
+    margin: auto; /* center the container horizontally */
+}
+
+.form-field {
+    width: 100%; 
+    margin-bottom: 10px;
+}
+
+.form-field label {
+    margin-bottom: 5px;
+    display: block;
+}
+
+.form-field select,
+.form-field input[type="text"],
+.form-field input[type="number"],
+.form-field textarea,
+.form-field input[type="file"] {
+    width: 100%; /* make form fields full-width within the form container */
+    border: 1px solid #793f16; 
+    border-radius: 8px;
+    padding: 10px;
+    margin-top: 5px;
+}
+
+.sell-form button {
+    width: 100%;
+    background-color: #793f16; 
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.sell-form button:hover {
+    background-color: #5a2b11; 
+}

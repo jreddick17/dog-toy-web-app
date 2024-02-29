@@ -1,0 +1,23 @@
+<%- include('./partials/header.ejs')%>
+
+    <main class="content-container">
+        <div class="quadrant top-left">
+            <h1><%= error.status%> Error</h1> 
+            <h2><%= error.message%> </h2>
+            <p>Looks like something is off! Paws and take a look at the error above and contact us if you need further support.</p>
+        </div>
+
+        <div class="quadrant top-right">
+            <img src="/images/top-right-dog.jpeg" alt="Dog Image 1">
+        </div>
+
+        <div class="quadrant bottom-left">
+            <img src="/images/homepage-dog-small.jpg" alt="Dog Image 2">
+        </div>
+
+        <div class="quadrant bottom-right">
+            <img src="/images/bottom-right-dog.jpg" alt="Dog Image 3">
+        </div>
+    </main>
+
+    <%- include('./partials/footer.ejs')%>
