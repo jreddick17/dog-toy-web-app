@@ -1,4 +1,4 @@
-//test the pull
+//test the push
 const express = require('express');
 const morgan = require('morgan');
 const toyRoutes = require('./routes/toyRoutes');
