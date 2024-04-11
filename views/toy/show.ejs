@@ -3,25 +3,28 @@
     <div class="toy-details">
         <img src="<%= toy.image %>" alt="<%= toy.name %>">
         <div class="toy-info">
+            <p><strong>Posted <%= toy.createdAt.toLocaleString()%> by <%= toy.seller.firstName + ' ' + toy.seller.lastName%></strong></p>
             <h2 class="toy-name"><%= toy.title %></h2>
             <p><strong>Condition:</strong> <%= getConditionLabel(toy.condition) %></p>
             <p><strong>Price:</strong> <%= toy.price %></p>
             <p><strong>Offers:</strong> <%= toy.offers %></p>
             <p><strong>Seller:</strong> <%= toy.seller %></p>
             <p class="toy-description"><strong>Description: </strong><%= toy.description %></p>
-            <div class="buttons">
-                <form method="GET" action="/toys/<%= toy.id %>/edit">
-                    <button class="edit-button" type="submit">Edit</button>
-                </form>
-                <form method="POST" action="/toys/<%= toy.id %>?_method=DELETE">
-                    <button class="delete-button" type="submit">Delete</button>
-                </form>
-            </div>
+            <% if (toy.seller._id.toString() === user) { %>
+                <div class="buttons">
+                    <form method="GET" action="/toys/<%= toy._id %>/edit">
+                        <button class="edit-button" type="submit">Edit</button>
+                    </form>
+                    <form method="POST" action="/toys/<%= toy._id %>?_method=DELETE">
+                        <button class="delete-button" type="submit">Delete</button>
+                    </form>
+                </div>
+                <% } %>
         </div>
     </div>
 </body>
+<%- include('../partials/footer.ejs')%>
 
-    <%- include('../partials/footer.ejs')%>
 
     <% function getConditionLabel(condition) {
         if (condition === 'new') {

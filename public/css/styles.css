@@ -318,3 +318,42 @@ footer {
 .sell-form button:hover {
     background-color: #5a2b11; 
 }
+
+
+/* Account Creation Page Styles */
+.account-creation-container {
+    padding: 20px;
+    max-width: 500px;
+    margin: auto; /* Center the container on the page */
+    background-color: white; /* Match the theme for form backgrounds */
+    border-radius: 8px; /* Consistent with other form styles */
+}
+
+.account-creation-header {
+    text-align: center;
+    margin-bottom: 20px; /* Space between header and form */
+}
+
+.account-creation-header h1 {
+    font-size: 30px; /* Adjust size as needed */
+}
+
+.account-creation-header p {
+    font-size: 16px; /* Adjust size as needed */
+}
+
+/* Ensuring button styles are consistent with form usage */
+.account-creation-form button {
+    width: 100%;
+    background-color: #793f16; 
+    color: white;
+    padding: 10px; /* Make sure buttons are comfortably clickable */
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+    margin-top: 10px; /* Space from the last form field */
+}
+
+.account-creation-form button:hover {
+    background-color: #5a2b11; 
+}

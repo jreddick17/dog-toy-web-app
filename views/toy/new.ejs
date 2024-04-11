@@ -7,22 +7,19 @@
 
 <div class="sell-container">
     <form action = '/toys' method = 'POST' class="sell-form" enctype="multipart/form-data">
-        <div class="form-field">
-            <label for="seller">Seller:</label>
-            <input type="text" id="seller" name="seller" required>
-        </div>
-
+        
         <div class="form-field">
             <label for="condition">Condition:</label>
             <select id="condition" name="condition" required>
                 <option value="" disabled selected>Please Select One</option>
-                <option value="new">New</option>
-                <option value="used">Used</option>
-                <option value="slightly-used">Slightly Used</option>
-                <option value="still-in-the-box">Still in the Box</option>
-                <option value="very-used">Very Used</option>
+                <option value="New">New</option>
+                <option value="Used">Used</option>
+                <option value="Slightly Used">Slightly Used</option>
+                <option value="Still in the Box">Still in the Box</option>
+                <option value="Very Used">Very Used</option>
             </select>
         </div>
+        
 
         <div class="form-field">
             <label for="title">Title:</label>

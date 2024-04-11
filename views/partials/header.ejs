@@ -19,7 +19,7 @@
             <p>Paws, Claws, and Tail-Wagging Applause!</p>
         </div>
 
-            <form class="search-bar" action="/toys/search" method="POST">
+            <form class="search-bar" action="/toys/search" method="GET">
                     <input type="text" placeholder="Search..." name="search">
                     <button type="submit">Search</button>
             </form>
@@ -28,9 +28,29 @@
             <a href="/">Home</a>
             <a href="/toys">Toys</a>
             <a href="/toys/new">Upload Toy</a>
-            <a href="#">Login</a>
-            <a href="#">Sign Up</a>
+            <%if(!user) {%>
+                <a href='/users/new'>Sign Up</a>
+                <a href='/users/login'>Login</a>
+            <%} else {%>
+                <a href='/users/profile'>Profile</a>
+                <a href='/users/logout'>Logout</a>
+            <%}%>
         </nav>
     </header>
 
+    <% if(errorMessages.length > 0) {%>
+        <% errorMessages.forEach(message=>{%>
+            <div class='error'>
+                <%=message%>
+            </div>
+            <%});%>
+                <%}%>
     
+                    <% if(successMessages.length > 0) {%>
+    
+                        <% successMessages.forEach(message=>{%>
+                            <div class='success'>
+                                <%=message%>
+                            </div>
+                            <%});%>
+                                <%}%>

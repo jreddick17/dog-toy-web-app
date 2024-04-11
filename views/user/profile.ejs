@@ -1,0 +1,12 @@
+<%- include('../partials/header.ejs')%>
+    <h2>Welcome, <%=user.firstName%></h2>
+    <%if(toys.length) {%>
+        <p>You have created the following toys</p>
+        <%toys.forEach(toy => {%>
+            <a href = '/toys/<%= toy.id%>'><p><%=toy.title%></p></a>
+        <%});
+    } else {%>
+        <p>You have not created any toys</p>
+    <%}%>
+    </div>
+    <%- include('../partials/footer.ejs')%>

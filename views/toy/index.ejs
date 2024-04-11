@@ -4,7 +4,7 @@
         <section class="toys-container">
             <% if (toys.length) { %>
              <% toys.forEach(toy => { %>
-             <a href="/toys/<%= toy.id %>" class="toy-card">
+             <a href="/toys/<%= toy._id %>" class="toy-card">
                  <img src="<%= toy.image %>" alt="<%= toy.title %>">
                 <div class="toy-info">
                  <h2><%= toy.title %></h2>

@@ -1,4 +1,30 @@
-const {v4: uuidv4} = require('uuid');
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
+
+const toySchema = new Schema({
+    title: {type: String, required: [true, 'title is required']},
+    condition: {
+        type: String,
+        required: [true, 'Condition is required'],
+        enum: ['New', 'Used', 'Slightly Used', 'Still in the Box', 'Very Used']
+    },
+    price: { type: Number, min: 0.01, required: [true, 'Price is required'] },
+    offers: { type: Number, default: 0 }, // Set default value to 0
+    seller: {type: Schema.Types.ObjectId, ref:'User'},
+    description: {type: String, required: [true, 'description is required'], 
+        minLength: [10, 'the content should have at least 10 characters']},
+    image: {type: String, required: [true, 'image is required']},
+    active: { type: Boolean, default: true }
+},
+{timestamps: true}
+);
+
+//collection is named toys
+module.exports = mongoose.model('Toys', toySchema);
+
+
+
+/* const {v4: uuidv4} = require('uuid');
 const multer = require('multer');
 const path = require("path");
 
@@ -116,4 +142,4 @@ exports.searchByTerm = function(term) {
         toy.seller.toLowerCase().includes(term.toLowerCase()) ||
         toy.description.toLowerCase().includes(term.toLowerCase())
     );
-};
+}; */
